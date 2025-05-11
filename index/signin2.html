@@ -1,0 +1,100 @@
+<!-- File: login/signin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeFit - Get Started</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="../index1.html">
+            <img src="../BeFit-logo.png" alt="BeFit Logo" class="logo">
+        </a>
+    </div>
+
+    <div class="auth-container">
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <h2>Why Join BeFit?</h2>
+            <ul class="benefits-list">
+                <li>
+                    <i class="fas fa-dumbbell benefit-icon"></i>
+                    <div>
+                        <h3>Personalized Plans</h3>
+                        <p>AI-generated workouts tailored to your goals and fitness level</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-chart-line benefit-icon"></i>
+                    <div>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your achievements and stay motivated with detailed analytics</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-user-clock benefit-icon"></i>
+                    <div>
+                        <h3>Flexible Scheduling</h3>
+                        <p>Adapt your training plan to fit your busy lifestyle</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Auth Section -->
+        <div class="auth-box">
+            <button class="auth-toggle" id="toggleAuth">Sign In</button>
+            
+            <!-- Sign Up Form -->
+            <form class="auth-form" id="signupForm">
+                <h2>Create Account</h2>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <button type="submit" class="cta-button">Get Started</button>
+            </form>
+
+            <!-- Login Form -->
+            <form class="auth-form" id="loginForm" style="display: none;">
+                <h2>Welcome Back</h2>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <button type="submit" class="cta-button">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between Sign In and Log In
+        const toggleBtn = document.getElementById('toggleAuth');
+        const signupForm = document.getElementById('signupForm');
+        const loginForm = document.getElementById('loginForm');
+
+        toggleBtn.addEventListener('click', () => {
+            const isLogin = loginForm.style.display === 'block';
+            loginForm.style.display = isLogin ? 'none' : 'block';
+            signupForm.style.display = isLogin ? 'block' : 'none';
+            toggleBtn.textContent = isLogin ? 'Sign In' : 'Log In';
+            document.querySelector('.auth-box h2').textContent = isLogin ? 'Create Account' : 'Welcome Back';
+        });
+    </script>
+</body>
+</html>
