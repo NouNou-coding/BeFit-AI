@@ -7,16 +7,15 @@
     font-family: 'Arial', sans-serif;
 }
 
-body {
+body{
     min-height: 100vh;
     position: relative;
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
     transition: background-image 1s ease-in-out;
-    background-image: url('photos/1043656.jpg');
+    background-image: url('photos/img6.5.jpg');
 }
-
 
 body::before {
     content: '';
@@ -25,8 +24,59 @@ body::before {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     z-index: -1;
+}
+
+body.shop-page::before {
+    display: none;
+}
+
+.shop-page {
+    color: #333;
+}
+
+body.shop-page {
+    background-image: none !important;
+    background-color: #ffffff !important;
+}
+
+/* Shop page specific navigation */
+.shop-page .page-header {
+     background: #4A90E2 !important;
+    border-bottom: none !important;
+}
+
+.shop-page .logo-nav img {
+    height: 50px;
+    filter: none; /* Remove brightness filter */
+    transition: transform 0.3s ease;
+}
+
+.shop-page .nav-links a {   
+    color: #333 !important;
+}
+
+.shop-page .nav-links a::after {
+    background-color: #4A90E2; /* Underline matches brand color */
+}
+
+.shop-page .nav-login {
+    border-color: #4A90E2;
+    color: #4A90E2 !important;
+}
+
+.shop-page .nav-login:hover {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.shop-page .nav-container {
+    justify-content: flex-end;
+    padding: 1rem 5%;
+}
+
+.shop-page .logo-nav:hover img {
+    transform: scale(1.05);
 }
 
 /* Navigation Styles */
@@ -125,6 +175,7 @@ body::before {
     padding: 0 10% 1 rem;
     color: white;
     margin-top: 20px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .hero-left {
@@ -147,7 +198,7 @@ h3 {
 }
 
 h1, h3 {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .highlight {
@@ -171,6 +222,7 @@ h1, h3 {
     font-size: 1.1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+     border: 2px solid transparent; /* Add border for contrast */ 
 }
 
 .cta-button:hover {
@@ -205,6 +257,24 @@ h1, h3 {
 
 
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page transition effect */
+body {
+    animation: fadeIn 0.5s ease;
+}
+
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /*signup3*/
 .signup-switch-btn {
     display: inline-block;
@@ -226,6 +296,21 @@ h1, h3 {
     color: #4A90E2;
 }
 
+
+.shop-page .page-header {
+    text-align: center;
+    padding: 1rem 0;
+}
+    
+.shop-page .page-header span[style*="1.4rem"] {
+    display: block;
+    margin-top: 0.5rem;
+}
+    
+.shop-items {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+    
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -254,4 +339,5 @@ h1, h3 {
     .top-bar {
         height: 60px;
     }
+
 }
