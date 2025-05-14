@@ -18,7 +18,7 @@
         </div>
             
             <ul class="nav-links">
-                <li><a href="shop4.html">Supplements</a></li>
+                <li><a href="#shop-section">Supplements</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Support</a></li>
             </ul>
@@ -43,6 +43,22 @@
             </div>
         </div>  
     </div>
+
+     <script>
+        // Load shop4.html into the placeholder
+        fetch('shop4.html')
+            .then(response => response.text())
+            .then(html => {
+                // Extract only the shop content (skip headers/duplicate elements)
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const shopContent = doc.querySelector('.shop-container').innerHTML;
+                
+                // Inject into the placeholder
+                document.getElementById('shop-section').innerHTML = shopContent;
+            })
+            .catch(error => console.error('Error loading shop:', error));
+    </script>
 </body>
 
 </html>
