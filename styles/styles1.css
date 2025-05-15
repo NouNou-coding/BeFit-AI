@@ -28,17 +28,34 @@ body::before {
     z-index: -1;
 }
 
-body.shop-page::before {
-    display: none;
-}
-
 .shop-page {
     color: #333;
 }
+.shop-container {
+    background: white;
+    margin-top: 2rem;
+    padding: 2rem 5% !important;
+}
 
-body.shop-page {
-    background-image: none !important;
-    background-color: #ffffff !important;
+.shop-columns::after {
+    background: #ddd; /* Muted separator line */
+}
+
+/* Keep shop items white */
+.shop-items {
+    background: white;
+}
+
+/* Ensure navigation remains transparent */
+.page-header {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+/* Keep body styles for non-shop pages */
+body:not(.shop-page) {
+    background-image: url('/photos/img7.jpg');
+    background-attachment: fixed;
 }
 
 /* Shop page specific navigation */
@@ -77,6 +94,15 @@ body.shop-page {
 
 .shop-page .logo-nav:hover img {
     transform: scale(1.05);
+}
+
+.shop-page .shop-item {
+    background: white !important;
+    color: #333 !important;
+    border: 1px solid #eee !important;
+}
+.shop-page .item-description {
+    color: #666 !important;
 }
 
 /* Navigation Styles */

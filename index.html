@@ -32,6 +32,7 @@
     
 
     <div class="hero-content">
+        <section id="shop-section" class="shop-container"></section>
         <div class="hero-left">
             <h1>Transform Your Fitness with 
                 <span class="highlight"><br>BeFit AI Precision.</span>
@@ -52,10 +53,10 @@
                 // Extract only the shop content (skip headers/duplicate elements)
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
-                const shopContent = doc.querySelector('.shop-columns').innerHTML;
+                const shopContent = doc.querySelector('.shop-columns').outerHTML;
                 
                 // Inject into the placeholder
-                document.getElementById('shop-section').innerHTML = shopContent;
+                document.getElementById('shop-section').innerHTML = `<div class="shop-page-content">${shopContent}</div>`;
             })
             .catch(error => console.error('Error loading shop:', error));
     </script>
