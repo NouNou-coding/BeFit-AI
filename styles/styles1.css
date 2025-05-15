@@ -14,7 +14,7 @@ body{
     background-position: top center;
     background-attachment: fixed;
     transition: background-image 1s ease-in-out;
-    background-image: url('photos/img7.jpg');
+    background-image: url('../photos/img7.jpg');
 }
 
 body::before {
@@ -297,6 +297,10 @@ body {
 }
 
 
+
+
+
+/* shop4.html */
 .shop-page .page-header {
     text-align: center;
     padding: 1rem 0;
@@ -348,7 +352,7 @@ body {
     text-align: center;
 }
         
-.page-header {
+.page-header1 {
      background: #4A90E2;
     padding: 4rem 2.5rem 3rem;
     margin: 2rem auto 3rem;
@@ -361,7 +365,7 @@ body {
     position: relative;
 }
         
-.page-header span {
+.page-header1 span {
     color: white !important;
     display: inline-block;
     padding: 0 15px;
@@ -369,7 +373,7 @@ body {
         
 }
         
-.page-header span[style*="1.4rem"] {
+.page-header1 span[style*="1.4rem"] {
     color: #e6f0fd !important;
     font-size: 1.4rem !important;
     display: block;
@@ -377,7 +381,7 @@ body {
     letter-spacing: 0.8px;
 }
     
-.page-header::after {
+.page-header1::after {
     content: '';
     position: absolute;
     top: 0;
@@ -399,12 +403,12 @@ body {
 .page-header br {
 display: none;
 }
-.page-header {
+.page-header1 {
 transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 transform-origin: center;
 }
 
-.page-header:hover {
+.page-header1:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 30px rgba(74, 144, 226, 0.4);
     animation: headerGlow 1.5s ease-in-out infinite alternate;
@@ -418,7 +422,7 @@ transform-origin: center;
     }
 }
         
-.page-header:hover::after {        
+.page-header1:hover::after {        
     animation: patternSlide 20s linear infinite;       
 }
 @keyframes patternSlide {    
