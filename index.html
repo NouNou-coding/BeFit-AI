@@ -46,13 +46,13 @@
 
      <script>
         // Load shop4.html into the placeholder
-        fetch('shop/shop4.html')
+        fetch('shop4.html')
             .then(response => response.text())
             .then(html => {
                 // Extract only the shop content (skip headers/duplicate elements)
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
-                const shopContent = doc.querySelector('.shop-container').innerHTML;
+                const shopContent = doc.querySelector('.shop-columns').innerHTML;
                 
                 // Inject into the placeholder
                 document.getElementById('shop-section').innerHTML = shopContent;
